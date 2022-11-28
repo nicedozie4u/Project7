@@ -53,6 +53,8 @@ Use `gdisk` utility to create a single partition on each of the 3 disks
 
 Use `lsblk` utility to view the newly configured partition on each of the 3 disks
 
+`lsblk`
+
 ![lsblk2](./images/lsblk2.PNG)
 
 Install `lvm2` package using `sudo yum install lvm2`
@@ -100,9 +102,9 @@ Verify that your VG has been created successfully by running `sudo vgs`
 Use lvcreate utility to create 3 logical volumes. opt-lv, apps-lv, and logs-lv. NOTE: apps-lv will be used to store data for the Website while, logs-lv will be used to store data for logs, and opt-lv will be used by Jenkins server in Project 8
 
 ```
-sudo lvcreate -L opt-lv -n 10G nfs-vg
-sudo lvcreate -L apps-lv -n 10G nfs-vg
-sudo lvcreate -L logs-lv -n 5G nfs-vg
+sudo lvcreate -L 10G -n lv-apps  nfs-vg 
+sudo lvcreate -L 10G -n lv-opt nfs-vg
+sudo lvcreate -L 5G -n lv-logs nfs-vg
 ```
 
 ![lvcreate group](./images/lvcreate.PNG)
@@ -168,4 +170,19 @@ Create **/mnt/apps**, **/mnt/logs**, **/mnt/opt** directory to store files
 
 ![mnt LV](./images/mnt%20lv.PNG)
 
-Use rsync utility to backup all the files in the log directory /var/log into /home/recovery/logs (This is required before mounting the file system)
+Install NFS server, configure it to start on reboot and make sure it is up and running
+
+```
+sudo yum -y update
+sudo yum install nfs-utils -y
+sudo systemctl start nfs-server.service
+sudo systemctl enable nfs-server.service
+sudo systemctl status nfs-server.service
+```
+![update](./images/yum%20update.PNG)
+
+![install NFS](./images/install%20nfs%20util.PNG)
+
+![enable NFS](./images/start%20%26%20enable%20service.PNG)
+
+![NFS running](./images/status%20service.PNG)
