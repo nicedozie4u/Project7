@@ -234,3 +234,21 @@ Check which port is used by NFS and open it using Security Groups (add new Inbou
 
 ![open NFS ports](./images/Open%20NFS%20ports.PNG)
 
+
+## CONFIGURE THE DATABASE SERVER
+
+By now you should know how to install and configure a MySQL DBMS to work with remote Web Server
+
+Spin up a new EC2 instance with Ubuntu 20.0 Operating System.
+
+![DB](./images/db%20ec2.PNG)
+
+Install MySQL server
+
+```
+sudo yum update
+sudo yum install mysql-server
+```
+
+![install mysql](./images/install%20MySql%20server.PNG)
+
