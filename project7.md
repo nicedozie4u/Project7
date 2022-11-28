@@ -102,7 +102,7 @@ Verify that your VG has been created successfully by running `sudo vgs`
 Use lvcreate utility to create 3 logical volumes. opt-lv, apps-lv, and logs-lv. NOTE: apps-lv will be used to store data for the Website while, logs-lv will be used to store data for logs, and opt-lv will be used by Jenkins server in Project 8
 
 ```
-sudo lvcreate -L 10G -n lv-apps  nfs-vg 
+sudo lvcreate -L 10G -n lv-apps nfs-vg 
 sudo lvcreate -L 10G -n lv-opt nfs-vg
 sudo lvcreate -L 5G -n lv-logs nfs-vg
 ```
