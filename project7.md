@@ -37,11 +37,13 @@ Use `lsblk` command to inspect what block devices are attached to the server.
 
 Use `df -h` command to see all mounts and free space on your server
 
+`df -h`
+
 ![df -h](./images/df%20-h.PNG)
 
 Use `gdisk` utility to create a single partition on each of the 3 disks
 
-`sudo gdisk /dev/xvdh`
+`sudo gdisk /dev/xvdf`
 
 ![gdisk](./images/createLVM001.PNG)
 
