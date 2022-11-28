@@ -130,15 +130,15 @@ Instead of formating the disks as `ext4` you will have to format them as `xfs`
 
 Use `mkfs.ext4` to format the logical volumes with `xfs` filesystem
 
-`sudo mkfs -t xfs /dev/nfs-vg/opt-lv`
+`sudo mkfs -t xfs /dev/nfs-vg/lv-opt`
 
 ![mkfs](./images/mkfs.xfs1.PNG)
 
-`sudo mkfs -t xfs /dev/nfs-vg/apps-lv`
+`sudo mkfs -t xfs /dev/nfs-vg/lv-apps`
 
 ![mkfs](./images/mkfs.xfs2.PNG)
 
-`sudo mkfs -t xfs /dev/nfs-vg/logs-lv`
+`sudo mkfs -t xfs /dev/nfs-vg/lv-logs`
 
 ![mkfs](./images/mkfs.xfs3.PNG)
 
