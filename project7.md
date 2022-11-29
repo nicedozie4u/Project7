@@ -307,7 +307,7 @@ add following line
 
 Install *Remi’s repository*, Apache and PHP
 
-```s
+```
 sudo yum install httpd -y
 
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -333,13 +333,15 @@ setsebool -P httpd_execmem 1
 
 ![check changes](./images/install%20dnf%20module.PNG)
 
+
 ![check changes](./images/install%20dnf%20module%20enable.PNG)
+
 
 ![check changes](./images/dnf%20install%20php.PNG)
 
 ![enable php](./images/start%20%26%20enable%20php.PNG)
 
-## Repeat steps 1-5 for another 2 Web Servers
+## Repeat steps 1-5 for the other 2 Web Servers
 
 Verify that Apache files and directories are available on the Web Server in */var/www* and also on the NFS server in */mnt/apps*. If you see the same files – it means NFS is mounted correctly. You can try to create a new file *touch test.txt* from one server and check if the same file is accessible from other Web Servers.
 
