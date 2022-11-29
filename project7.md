@@ -307,7 +307,7 @@ add following line
 
 Install *Remi’s repository*, Apache and PHP
 
-```
+```s
 sudo yum install httpd -y
 
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
