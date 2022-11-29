@@ -375,7 +375,26 @@ Deploy the tooling website’s code to the Webserver. Ensure that the html folde
 **Note 2**: If you encounter 403 Error – check permissions to your */var/www/html* folder and also disable SELinux `sudo setenforce 0`
 To make this change permanent – open following config file `sudo vi /etc/sysconfig/selinux` and set `SELINUX=disabled` then restart httpd.
 
+![check permissions](./images/webserver2.0.PNG)
+
+Update the website’s configuration to connect to the database (in `/var/www/html/functions.php file`). Apply `tooling-db.sql` script to your database using this command `mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql`
+
+![update wesite config](./images/update%20website%20config.PNG)
+
+Create in MySQL a new admin user with username: *myuser* and password: *password*
+
+```sql
+INSERT INTO ‘users’ (‘id’, ‘username’, ‘password’, ’email’, ‘user_type’, ‘status’) VALUES
+-> (1, ‘myuser’, ‘5f4dcc3b5aa765d61d8327deb882cf99’, ‘user@mail.com’, ‘admin’, ‘1’);
+```
+
+![create user](./images/create%20user02.png)
+
+Open the website in your browser `http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php` and make sure you can login into the websute with `myuser` user.
+
+![login](./images/login%20page.PNG)
 
 
+![login](./images/logged%20in.PNG)
 
-
+# Congratulations.
